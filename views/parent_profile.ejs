@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <title>Teacher Talk: Parents</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="sticky-note">
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class=""></span> Parent Profile Page</h1>
+        <a href="/logout" class="btn btn-default btn-sm logout">Logout</a>
+    </div>
+
+    <div class="row" id="tmess">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+          <!-- parents can read and react with a thumbs up to the message  -->
+          <h3>Teachers Message </h3>
+          <ul class="messages">
+          <% for(var i=0; i<messages.length; i++) {%>
+            <li id="<%= messages[i]._id %>"  class="message">
+              <span>[<%= messages[i].role %>]</span>>
+              <span><%= messages[i].name %></span>
+              <span><%= messages[i].msg %></span>
+              <span><%= messages[i].readByCount%></span>
+              <span><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+              <button class="add-comment" data-id="<%= messages[i]._id %>">Comment 💬</button>     
+          
+          <!-- <div class="message-input"> -->
+       <!-- make it so only the user can delete the comments posted ? -->
+      <% /* %>
+      All users can view the comments/ responses posted or only teacher? 
+        <%# if (user.local.email) { %>
+          <form action="/messages" method="POST">
+            <input type="text" value="<%# user.local.email %>" name="name">
+            <input type="text" placeholder="message" name="msg">
+            <button type="submit">Submit 📩</button>
+            <span><button class="message-delete" data-id="<%# messages[i]._id %>"> 🚫</button></span>
+
+          </form>
+        </div>
+       
+         <%# } %>
+        <% */ %>
+        <% if (messages[i].read) { %> 
+          <span><i style="color: green" class="fa fa-check-square-o" aria-hidden="true"></i></span>
+        <% } else { %> 
+          <span><button class="message-read" data-id="<%= messages[i]._id %>"><i class="fa fa-check-square-o" aria-hidden="true"></i></button></span>
+        <% } %> 
+      </li>
+    <% } %> 
+    </ul> 
+  </div>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "Full_Stack_App_User_login_2",
+			"path": "../../Full_Stack_App_User_login_2"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"terminal.integrated.fontSize": 14
+	}
+}

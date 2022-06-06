@@ -1,0 +1,95 @@
+body{
+  /* padding-top:80px; */
+  word-wrap:break-word;
+  background-color: rgb(236, 236, 87);
+ 
+}
+.sticky-note{
+  background-image: url(img/notes.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgb(224, 238, 243);
+}
+.page-header{
+  border-bottom: none;
+  display: inline-block;
+  width: 100%;
+  margin-top: 0%;
+}
+
+/* img{
+  height: 200px;
+} */
+
+.well{
+  display:none;
+}
+
+.notes_{
+  position: relative;
+  text-align:left
+}
+
+._message, ._name{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+._message{
+  width:200px;
+  height:100px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.button{
+  margin-left: 123px;
+  margin-top: 77px;
+}
+._button{
+  margin-top: 70px;
+  margin-left: 195px;
+}
+.row{
+  width: 300px;
+  display: inline-block;
+  /* border: 2px solid black; */
+  margin-left:30px ;
+}
+/* 
+.yellow{
+  background-color: rgb(178, 178, 11);
+} */
+
+#tmess{
+margin-left: 0%;
+}
+.col-sm-6{
+  width: 300px;
+  display: inline-block;
+  /* border: 2px solid black; */
+}
+h2{
+  font-size: 25px;
+  margin-bottom: 39px;
+}
+.logout{
+  background-color: red;
+}
+#_login{
+  background-color: bisque;
+}
+
+#apple{
+  width: 100px;
+  height: 100px;
+  margin-left: 200px;
+  border-radius: 10px;
+}
+
+#green{
+background-color: rgb(119, 184, 119);
+}
